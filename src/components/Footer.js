@@ -1,3 +1,4 @@
+import { socialLinks } from "../data"
 const Footer = () => {
     return (
         <>
@@ -17,21 +18,15 @@ const Footer = () => {
                     </li>
                 </ul>
                 <ul className="footer-icons">
-                    <li>
-                    <a href="https://www.twitter.com" target="_blank" className="footer-icon"
-                        ><i className="fab fa-facebook"></i
-                    ></a>
-                    </li>
-                    <li>
-                    <a href="https://www.twitter.com" target="_blank" className="footer-icon"
-                        ><i className="fab fa-twitter"></i
-                    ></a>
-                    </li>
-                    <li>
-                    <a href="https://www.twitter.com" target="_blank" className="footer-icon"
-                        ><i className="fab fa-squarespace"></i
-                    ></a>
-                    </li>
+                    {socialLinks.map((socialLink)=>{
+                        return(
+                            <li>
+                                <a href={socialLink.href} target="_blank" className="footer-icon"
+                                    ><i className={socialLink.icon}></i
+                                ></a>
+                            </li> 
+                        )      
+                    })}
                 </ul>
                 <p className="copyright">
                     copyright &copy; Backroads travel tours company
